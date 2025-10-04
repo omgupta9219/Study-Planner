@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Study Planner</h1>
+            <p class="subtitle">Organize your academic goals and boost productivity</p>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="totalTasks">0</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="completedTasks">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Progress</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="add-task-section">
+                <h2>Add New Study Task</h2>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="taskTitle">Task Title</label>
+                        <input type="text" id="taskTitle" placeholder="e.g., Complete Math Assignment" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="taskSubject">Subject</label>
+                            <input type="text" id="taskSubject" placeholder="e.g., Mathematics" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taskPriority">Priority</label>
+                            <select id="taskPriority">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="taskDate">Due Date</label>
+                            <input type="date" id="taskDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taskTime">Reminder Time</label>
+                            <input type="time" id="taskTime">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskNotes">Notes (Optional)</label>
+                        <textarea id="taskNotes" rows="2" placeholder="Additional details..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Add Task</button>
+                </form>
+            </div>
+
+            <div class="tasks-section">
+                <div class="section-header">
+                    <h2>My Study Tasks</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                </div>
+
+                <div class="timeline-container">
+                    <div id="tasksList" class="tasks-list">
+                        <div class="empty-state">
+                            <p>No tasks yet. Add your first study goal above! 📝</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
